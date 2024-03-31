@@ -3,19 +3,51 @@
 
 package controller;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import model.ProductInCart;
+import model.User;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 
 @WebServlet(name = "ProcessCheckout", value = "/cart")
 public class ProcessCheckout extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processOrder(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        ArrayList<ProductInCart> cart = (ArrayList<ProductInCart>) session.getAttribute("cart");
+        User user = (User) session.getAttribute("user");
+        int userId = user.getId();
+        int totalMoney = 0;
+        for (ProductInCart prod : cart)
+        {
+            totalMoney += prod.getQuantity() * prod.getPrice();
+        }
+        String first_name = request.getParameter("firstName");
+        String last_name = request.getParameter("lastName");
+        String address = request.getParameter("address");
+        String note = request.getParameter("note");
+        String email = request.getParameter("email");
+        String number = request.getParameter("number");
+        Boolean saveInfo = Boolean.valueOf(request.getParameter("save-info"));
+        String paymentMethod = "Ship COD";
+        String status = "Processing";
+        String shipping_method = request.getParameter("shippingMethod");
+        String order_date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        System.out.println(userId + " / " + first_name + " / " + last_name +" / " + email + " / " + number + " / " + address + " / " + order_date + " / " + status + " / " + note + " / " + totalMoney + " / " + shipping_method + " / " + paymentMethod + " / " + saveInfo);
     }
 
     @Override
@@ -27,6 +59,6 @@ public class ProcessCheckout extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+       processOrder(request, response);
     }
 }

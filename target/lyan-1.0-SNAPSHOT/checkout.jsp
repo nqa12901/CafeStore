@@ -47,11 +47,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4 class="mb-3">Billing address</h4>
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" method="POST" action="./cart" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder=""
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder=""
                                        value="<%if (user != null) { %> <%=user.getFirst_name()%> <% } %>" required>
                                 <div class="invalid-feedback">
                                     Valid first name is required.
@@ -59,7 +59,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder=""
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder=""
                                        value="<%if (user != null) { %> <%=user.getLast_name()%> <% } %>" required>
                                 <div class="invalid-feedback">
                                     Valid last name is required.
@@ -72,17 +72,22 @@
                             <%--                            and when send order, the address will be updated and store on user table based on the address in order form--%>
                             <label for="Address">Address</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="address" placeholder="Address" required>
+                                <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Your address is required.
                                 </div>
                             </div>
                         </div>
-
+                        <div class="mb-3">
+                            <label for="Note">Them huong dan giao hang</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="note" name="note" placeholder="Note">
+                            </div>
+                        </div>
                         <div class="mb-3">
                             <label for="Number">Phone number</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="number" placeholder="Number" required>
+                                <input type="text" class="form-control" id="number" name="number" placeholder="Number" required>
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Your number is required.
                                 </div>
@@ -91,14 +96,14 @@
 
                         <div class="mb-3">
                             <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <hr class="mb-4">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="save-info">
+                            <input type="checkbox" class="custom-control-input" name="save-info" id="save-info">
                             <label class="custom-control-label" for="save-info">Save this information for next
                                 time</label>
                         </div>
@@ -122,10 +127,32 @@
                             <%--                            </div>--%>
                         </div>
                         <hr class="mb-4">
+                        <h4 class="mb-3">Shipping method</h4>
+
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="slow" name="shippingMethod" type="radio" class="custom-control-input" value="slow"
+                                       checked required>
+                                <label class="custom-control-label" for="slow">Thuong</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="fast" name="shippingMethod" type="radio" class="custom-control-input" value="fast"
+                                       checked required>
+                                <label class="custom-control-label" for="fast">Hoa toc</label>
+                            </div>
+                            <%--                            <div class="custom-control custom-radio">--%>
+                            <%--                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
+                            <%--                                <label class="custom-control-label" for="debit">Debit card</label>--%>
+                            <%--                            </div>--%>
+                            <%--                            <div class="custom-control custom-radio">--%>
+                            <%--                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
+                            <%--                                <label class="custom-control-label" for="paypal">Paypal</label>--%>
+                            <%--                            </div>--%>
+                        </div>
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
                     </form>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" id="your-cart">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Your cart</span>
                         <span class="badge badge-secondary badge-pill"><%= cart.size()%></span>
@@ -222,7 +249,9 @@
                     id: id,
                 },
                 success: function (data) {
-                    $("body").html(data);
+                    var content = $(data).find('#your-cart').html();
+                    console.log(content);
+                    $("#your-cart").html(content);
                 },
                 error: function (xhr) {
                     // ok
