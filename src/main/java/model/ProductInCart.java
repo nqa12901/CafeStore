@@ -4,17 +4,26 @@ import java.util.Objects;
 
 public class ProductInCart {
     private String title;
-    private int price;
+    private int price, id;
     private int quantity;
     private String option;
     private String imageURL;
 
-    public ProductInCart(String title, int price, int quantity, String option, String imageURL) {
+    public ProductInCart(int id, String title, int price, int quantity, String option, String imageURL) {
+        this.id = id;
         this.title = title;
         this.price = price;
         this.quantity = quantity;
         this.option = option;
         this.imageURL = imageURL;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getImageURL() {

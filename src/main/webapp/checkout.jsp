@@ -69,7 +69,7 @@
 
                         <div class="mb-3">
                             <%--                            Auto fill current Address. In case address is null, user can update by hand,--%>
-                            <%--                            and when send order, the address will be updated and store on user table based on the address in order form--%>
+                            <%--                            and when send Order, the address will be updated and store on user table based on the address in Order form--%>
                             <label for="Address">Address</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
