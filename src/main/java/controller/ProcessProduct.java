@@ -78,6 +78,8 @@ public class ProcessProduct extends HttpServlet {
         {
             cart = (ArrayList<ProductInCart>) session.getAttribute("cart");
         }
+        String prodId = request.getParameter("prod-id");
+        System.out.println(prodId);
         String quantity = request.getParameter("quantity-form");
         System.out.println(quantity);
         String option = request.getParameter("option-form");
@@ -90,7 +92,7 @@ public class ProcessProduct extends HttpServlet {
         String imageURL = request.getParameter("image-form");
         System.out.println(imageURL);
 
-        ProductInCart product = new ProductInCart(title, Integer.parseInt(price), Integer.parseInt(quantity), option, imageURL);
+        ProductInCart product = new ProductInCart(Integer.parseInt(prodId),title, Integer.parseInt(price), Integer.parseInt(quantity), option, imageURL);
         boolean check = false;
         int cartNumber = cart.size();
         for (int i = 0; i < cartNumber; i++)

@@ -3,6 +3,7 @@
 
 package controller;
 
+import dao.OrderDAO;
 import model.ProductInCart;
 import model.User;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,7 +25,7 @@ import java.util.Date;
 public class ProcessCheckout extends HttpServlet {
 
     protected void processOrder(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
@@ -46,8 +48,13 @@ public class ProcessCheckout extends HttpServlet {
         String paymentMethod = "Ship COD";
         String status = "Processing";
         String shipping_method = request.getParameter("shippingMethod");
-        String order_date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        String order_date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         System.out.println(userId + " / " + first_name + " / " + last_name +" / " + email + " / " + number + " / " + address + " / " + order_date + " / " + status + " / " + note + " / " + totalMoney + " / " + shipping_method + " / " + paymentMethod + " / " + saveInfo);
+        int orderId = OrderDAO.addOrder(userId, totalMoney, first_name, last_name, email, number, address, order_date, status, note, shipping_method, paymentMethod);
+        for (ProductInCart prod : cart)
+        {
+            OrderDAO.addOrderDetail(orderId, prod.getId(), prod.getPrice(), prod.getQuantity(), prod.getPrice() * prod.getQuantity(), prod.getOption());
+        }
     }
 
     @Override
@@ -59,6 +66,10 @@ public class ProcessCheckout extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       processOrder(request, response);
+        try {
+            processOrder(request, response);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

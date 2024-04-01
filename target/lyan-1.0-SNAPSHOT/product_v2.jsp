@@ -573,6 +573,7 @@
                 </div>
                 <br><br>
                 <form method="POST" action="./product" id="add-to-cart">
+                    <input type="hidden" id="prod-id" name="prod-id" value="<%=prod.getId()%>">
                     <input type="hidden" id="image-form" name="image-form" value="<%=prod.getImageURL()%>">
                     <input type="hidden" id="title-form" name="title-form" value="<%=prod.getTitle()%>">
                     <input type="hidden" id="price-form" name="price-form" value="">
