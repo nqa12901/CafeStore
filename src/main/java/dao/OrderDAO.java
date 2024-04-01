@@ -22,6 +22,7 @@ public class OrderDAO {
         {
             String add = String.format("insert into order_details value(null,'%d','%d','%d','%d','%d','%s')", orderId, productId, price, quantity, totalMoney, size);
             PreparedStatement stm = c.prepareStatement(add);
+            stm.executeUpdate();
         }
         catch (Exception e) {
             e.printStackTrace();

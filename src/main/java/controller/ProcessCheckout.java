@@ -51,6 +51,7 @@ public class ProcessCheckout extends HttpServlet {
         String order_date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         System.out.println(userId + " / " + first_name + " / " + last_name +" / " + email + " / " + number + " / " + address + " / " + order_date + " / " + status + " / " + note + " / " + totalMoney + " / " + shipping_method + " / " + paymentMethod + " / " + saveInfo);
         int orderId = OrderDAO.addOrder(userId, totalMoney, first_name, last_name, email, number, address, order_date, status, note, shipping_method, paymentMethod);
+        System.out.println(orderId);
         for (ProductInCart prod : cart)
         {
             OrderDAO.addOrderDetail(orderId, prod.getId(), prod.getPrice(), prod.getQuantity(), prod.getPrice() * prod.getQuantity(), prod.getOption());

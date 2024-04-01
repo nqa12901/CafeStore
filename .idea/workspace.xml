@@ -11,18 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e31f0a03-7282-4b1d-afd5-3e375b97452a" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/OrderDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ProductInCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ProductInCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product_v2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product_v2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,7 +370,7 @@
       <workItem from="1711810657541" duration="700000" />
       <workItem from="1711816558986" duration="984000" />
       <workItem from="1711874952641" duration="342000" />
-      <workItem from="1711977231482" duration="4239000" />
+      <workItem from="1711977231482" duration="4980000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
