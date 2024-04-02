@@ -2,7 +2,7 @@ package model;
 
 public class User {
     private int id;
-    private String username, password, first_name, last_name, gender, birthday;
+    private String username, password, first_name, last_name, gender, birthday, number, address;
 
     public User(int id, String username, String password, String first_name, String last_name, String gender, String birthday) {
         this.id = id;
@@ -13,6 +13,7 @@ public class User {
         this.gender = gender;
         this.birthday = birthday;
     }
+
 
     public int getId() {
         return id;
