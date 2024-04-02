@@ -6,7 +6,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 
-@WebServlet(name = "ProcessInfor", value = "/infor")
+@WebServlet(name = "ProcessInfor", value = "/info")
 public class ProcessInfor extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -18,7 +18,7 @@ public class ProcessInfor extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher dis = request.getRequestDispatcher("infor.jsp");
+        RequestDispatcher dis = request.getRequestDispatcher("user_info.jsp");
         dis.forward(request,response);
     }
 

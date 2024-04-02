@@ -158,20 +158,21 @@
             <a href="login" class="text-highlight">Login</a>
             <% } else { %>
             <div class="d-flex align-items-center">
-                <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <div class="cart-count" id="cartCount">0</div>
-                </a>
                 <div class="dropdown text-highlight">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= user.getLast_name() + " " + user.getFirst_name()%>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Thông tin tài khoản</a>
-                        <a class="dropdown-item" href="./logout">Đăng xuất</a>
+                        <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160  Thông tin tài khoản</a>
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping"></i>&#160  Đơn mua</a>
+                        <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160  Đăng xuất</a>
                     </div>
                 </div>
+                <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="cart-count" id="cartCount">0</div>
+                </a>
             </div>
             <% } %>
         </div>
@@ -266,10 +267,10 @@
                 <a href="home"><img src="resources/Banner/Logo.png" width="200" height="40" alt=""></a>
                 <ul class="navbar-nav">
                     <li class="navbar-item">
-                        <a class="nav-link " href="#" style="font-size: 14px; line-height: 22px">Cà phê</a>
+                        <a class="nav-link " href="./product?type=1" style="font-size: 14px; line-height: 22px">Cà phê</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link " href="#" style="font-size: 14px; line-height: 22px">Trà</a>
+                        <a class="nav-link " href="./product?type=2" style="font-size: 14px; line-height: 22px">Trà</a>
                     </li>
                     <!-- Navbar dropdown -->
                     <li class="nav-item dropdown" href="login">

@@ -11,11 +11,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e31f0a03-7282-4b1d-afd5-3e375b97452a" name="Changes" comment="First commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/FileUploadServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/orderSuccess.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessInfor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessInfor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProcessCheckout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProcessCheckout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProcessInfor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProcessInfor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessCheckout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessCheckout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessInfor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessInfor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/resources/uploads/minh_chung.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +48,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Add new Servlet" />
         <option value="servlet" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Add new Servlet" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -375,6 +389,14 @@
       <workItem from="1711977231482" duration="7638000" />
       <workItem from="1712000859033" duration="464000" />
       <workItem from="1712001337216" duration="436000" />
+      <workItem from="1712028309760" duration="354000" />
+      <workItem from="1712029475858" duration="523000" />
+      <workItem from="1712032533824" duration="1515000" />
+      <workItem from="1712034335420" duration="214000" />
+      <workItem from="1712037614335" duration="526000" />
+      <workItem from="1712057866878" duration="2035000" />
+      <workItem from="1712072154816" duration="5271000" />
+      <workItem from="1712080297386" duration="1404000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
