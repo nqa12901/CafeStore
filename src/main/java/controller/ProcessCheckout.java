@@ -28,7 +28,7 @@ public class ProcessCheckout extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         ArrayList<ProductInCart> cart = (ArrayList<ProductInCart>) session.getAttribute("cart");
         User user = (User) session.getAttribute("user");
@@ -56,6 +56,8 @@ public class ProcessCheckout extends HttpServlet {
         {
             OrderDAO.addOrderDetail(orderId, prod.getId(), prod.getPrice(), prod.getQuantity(), prod.getPrice() * prod.getQuantity(), prod.getOption());
         }
+        RequestDispatcher rq = request.getRequestDispatcher("./orderSuccess.jsp");
+        rq.forward(request, response);
     }
 
     @Override
@@ -67,6 +69,8 @@ public class ProcessCheckout extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+
         try {
             processOrder(request, response);
         } catch (SQLException e) {

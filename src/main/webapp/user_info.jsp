@@ -3,7 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Product" %>
 <%@ page import="utils.CurrencyService" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" language="java"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
     <head>
@@ -29,12 +29,11 @@
     </head>
 
     <style>
-        .delete-button:hover
-        {
-            color:#e07c51;
+        .delete-button:hover {
+            color: #e07c51;
         }
-        .delete-button
-        {
+
+        .delete-button {
             color: #86939E;
         }
 
@@ -305,15 +304,53 @@
         .selected {
             color: #e07c51;
         }
+        .gender-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender-label {
+            flex: 0 0 70px;
+            margin-right: 20px;
+        }
+
+        .gender-option {
+            margin-right: 20px;
+        }
+
+    </style>
+
+<%--    birthday field type--%>
+    <style>
+        .birthday-fields {
+            display: flex;
+            align-items: center;
+        }
+
+        .birthday-fields label {
+            margin-right: 5px;
+        }
+
+        .birthday-fields select {
+            width: 80px; /* Adjust the width as needed */
+            margin-right: 5px;
+
+
+        }
+
+        .linhiu1{
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        form{
+            margin-left: 20px;
+        }
     </style>
     <% User user = (User) session.getAttribute("user");%>
     <%
-        ArrayList<ProductInCart> cart = (ArrayList<ProductInCart>) session.getAttribute("cart");
-        if (cart == null) {
-            response.sendRedirect("./home");
-        }
+
     %>
-    <% if (cart != null) { %>
+
     <body class="bg-light">
         <div class="top-bar">
             <span class="phone-icon">&#128222;</span>
@@ -325,7 +362,8 @@
                 <div class="d-flex align-items-center">
                     <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <div class="cart-count" id="cartCount"><%=cart.size()%></div>
+<%--                        <div class="cart-count" id="cartCount">0--%>
+                        </div>
                     </a>
                     <div class="dropdown text-highlight">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -410,8 +448,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="mb-3">Thông tin giao hàng</h4>
-                    <form class="needs-validation" method="POST" action="./cart" novalidate>
+                    <h4 class="mb-3">Hồ sơ của tôi</h4>
+                    <h5 class="mb-3">Quản lý thông tin hồ sơ để bảo mật tài khoản</h5>
+                    <form class="needs-validation" method="POST" action="./info" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">Họ</label>
@@ -429,6 +468,7 @@
                                     Yêu cầu tên hợp lệ.
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="mb-3">
@@ -436,127 +476,117 @@
                             <%--                            and when send Order, the address will be updated and store on user table based on the address in Order form--%>
                             <label for="Address">Địa chỉ</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                                <input type="text" class="form-control" id="address" name="address"
+                                       placeholder="Address"
+                                       value="<%if (user != null) { if (user.getAddress() != null) { %> <%=user.getAddress()%> <% }} %>"
+                                       required>
                                 <div class="invalid-feedback" style="width: 100%;">
-                                    Thêm địa chỉ giao hàng.
+                                    Yêu cầu địa chỉ hợp lệ.
                                 </div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Note">Thêm hướng dẫn giao hàng</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="note" name="note" placeholder="Note">
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="Number">Điện thoại</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="number" name="number" placeholder="Number" required>
+                                <input type="text" class="form-control" id="number" name="number" placeholder="Number"
+                                       value="<%if (user != null) { if (user.getNumber() != null) { %> <%=user.getNumber()%> <% }} %>" required>
+
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Thêm SĐT hợp lệ.
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="email">Email <span class="text-muted">(Không bắt buộc)</span></label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
+                        <div class="linhiu1">
+                            <row>
+                                <div class="form-check form-check-inline col-2">Giới tính:</div>
+                                <div class="form-check form-check-inline">
+                                    <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptions"
+                                            id="inlineRadio2"
+                                            value="option2"
+                                    />
+                                    <label class="form-check-label" for="inlineRadio2">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptions"
+                                            id="inlineRadio2"
+                                            value="option2"
+                                    />
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="inlineRadioOptions"
+                                            id="inlineRadio2"
+                                            value="option2"
+                                    />
+                                    <label class="form-check-label" for="inlineRadio2">Khác</label>
+                                </div>
+                            </row>
+                        </div>
+
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-2">Ngày sinh:</div>
+                                <div class="form-group col-md-2 linh">
+                                    <label for="inputState">Ngay:</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputState">Thang:</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputState">Nam:</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>100</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <hr class="mb-4">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="save-info" id="save-info">
-                            <label class="custom-control-label" for="save-info">Lưu thông tin cho đơn đặt hàng sau</label>
-                        </div>
+
+
+
                         <hr class="mb-4">
 
-                        <h4 class="mb-3">Thanh toán</h4>
-
-                        <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
-                                       checked required>
-                                <label class="custom-control-label" for="credit">Ship COD</label>
-                            </div>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="debit">Debit card</label>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="paypal">Paypal</label>--%>
-                            <%--                            </div>--%>
-                        </div>
-                        <hr class="mb-4">
-                        <h4 class="mb-3">Hình thức giao hàng</h4>
-
-                        <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="slow" name="shippingMethod" type="radio" class="custom-control-input" value="slow"
-                                       checked required>
-                                <label class="custom-control-label" for="slow">Thường</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="fast" name="shippingMethod" type="radio" class="custom-control-input" value="fast"
-                                       checked required>
-                                <label class="custom-control-label" for="fast">Nhanh</label>
-                            </div>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="debit">Debit card</label>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="paypal">Paypal</label>--%>
-                            <%--                            </div>--%>
-                        </div>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #e07c51; border: none">Đặt hàng</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit"
+                                style="background-color: #e07c51; border: none">Lưu
+                        </button>
                     </form>
                 </div>
                 <div class="col-md-6" id="your-cart">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Giỏ hàng</span>
-                        <span class="badge badge-secondary badge-pill"><%= cart.size()%></span>
+                        <span class="badge badge-secondary badge-pill">7</span>
                     </h4>
                     <ul class="list-group mb-3">
-                        <% int totalPrice = 0;
-                           int index = 0;%>
-                        <% for (ProductInCart prod : cart) {%>
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
 
-                                <h6 class="my-0"><img src="<%=prod.getImageURL()%>" style="max-width: 10%; height: auto">  <%=prod.getQuantity()%> x <%=prod.getTitle()%></h6>
-                                <small class="text-muted"><%=prod.getOption()%></small><br>
-                                <small class="delete-button" style="cursor: pointer" onclick="handleDeleteProduct(<%=index%>)">Xóa</small>
-                            </div>
-                            <span class="text-muted"><%=CurrencyService.formatPrice(prod.getPrice() * prod.getQuantity())%></span>
-                        </li>
-                        <%  totalPrice += prod.getPrice() * prod.getQuantity();
-                            index++;
-                        } %>
-                        <%--                        <li class="list-group-item d-flex justify-content-between bg-light">--%>
-                        <%--                            <div class="text-success">--%>
-                        <%--                                <h6 class="my-0">Promo code</h6>--%>
-                        <%--                                <small>EXAMPLECODE</small>--%>
-                        <%--                            </div>--%>
-                        <%--                            <span class="text-success">-$5</span>--%>
-                        <%--                        </li>--%>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Tổng (VNĐ)</span>
-                            <strong><%=CurrencyService.formatPrice(totalPrice)%> VNĐ</strong>
-                        </li>
                     </ul>
 
-<%--                    <form class="card p-2">--%>
-<%--                        <div class="input-group">--%>
-<%--                            <input type="text" class="form-control" placeholder="Promo code">--%>
-<%--                            <div class="input-group-append">--%>
-<%--                                <button type="submit" class="btn btn-secondary">Redeem</button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </form>--%>
+                    <%--                    <form class="card p-2">--%>
+                    <%--                        <div class="input-group">--%>
+                    <%--                            <input type="text" class="form-control" placeholder="Promo code">--%>
+                    <%--                            <div class="input-group-append">--%>
+                    <%--                                <button type="submit" class="btn btn-secondary">Redeem</button>--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+                    <%--                    </form>--%>
                 </div>
 
             </div>
@@ -622,5 +652,5 @@
             });
         }
     </script>
-    <% } %>
+
 </html>

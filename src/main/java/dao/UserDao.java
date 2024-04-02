@@ -37,7 +37,7 @@ public class UserDao {
         try (Connection c = openConnection())
         {
             System.out.printf("Insert record into the table...\n");
-            String select = String.format("INSERT INTO users VALUES (null, '%s', '%s', '%s', '%s', null, null, null, null)", username, password, first_name, last_name);
+            String select = String.format("INSERT INTO users VALUES (null, '%s', '%s', '%s', '%s', null, null, null, null, null)", username, password, first_name, last_name);
             Statement s = c.createStatement();
             int a = s.executeUpdate(select);
             return a != 0;
