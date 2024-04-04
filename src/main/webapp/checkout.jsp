@@ -3,7 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="model.Product" %>
 <%@ page import="utils.CurrencyService" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" language="java"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
     <head>
@@ -29,12 +29,11 @@
     </head>
 
     <style>
-        .delete-button:hover
-        {
-            color:#e07c51;
+        .delete-button:hover {
+            color: #e07c51;
         }
-        .delete-button
-        {
+
+        .delete-button {
             color: #86939E;
         }
 
@@ -325,7 +324,8 @@
                 <div class="d-flex align-items-center">
                     <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <div class="cart-count" id="cartCount"><%=cart.size()%></div>
+                        <div class="cart-count" id="cartCount"><%=cart.size()%>
+                        </div>
                     </a>
                     <div class="dropdown text-highlight">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -424,7 +424,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Tên</label>
                                 <input type="text" class="form-control" id="lastName" name="lastName" placeholder=""
-                                       value="<%if (user != null) { %> <%=user.getLast_name()%> <% } %>" required>
+                                       value="<% if (user != null) { %> <%=user.getLast_name()%> <% } %>" required>
                                 <div class="invalid-feedback">
                                     Yêu cầu tên hợp lệ.
                                 </div>
@@ -432,11 +432,12 @@
                         </div>
 
                         <div class="mb-3">
-                            <%--                            Auto fill current Address. In case address is null, user can update by hand,--%>
-                            <%--                            and when send Order, the address will be updated and store on user table based on the address in Order form--%>
                             <label for="Address">Địa chỉ</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                                <input type="text" class="form-control" id="address" name="address"
+                                       placeholder="Address"
+                                       value="<% if (user != null) { if (user.getAddress() != null) {  %> <%=user.getAddress()%> <% }} %>"
+                                       required>
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Thêm địa chỉ giao hàng.
                                 </div>
@@ -451,7 +452,9 @@
                         <div class="mb-3">
                             <label for="Number">Điện thoại</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="number" name="number" placeholder="Number" required>
+                                <input type="text" class="form-control" id="number" name="number" placeholder="Number"
+                                       value="<%if (user != null) { if (user.getNumber() != null) { %> <%=user.getNumber()%> <% }} %>"
+                                       required>
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Thêm SĐT hợp lệ.
                                 </div>
@@ -460,7 +463,8 @@
 
                         <div class="mb-3">
                             <label for="email">Email <span class="text-muted">(Không bắt buộc)</span></label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="you@example.com">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
@@ -468,7 +472,8 @@
                         <hr class="mb-4">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" name="save-info" id="save-info">
-                            <label class="custom-control-label" for="save-info">Lưu thông tin cho đơn đặt hàng sau</label>
+                            <label class="custom-control-label" for="save-info">Lưu thông tin cho đơn đặt hàng
+                                sau</label>
                         </div>
                         <hr class="mb-4">
 
@@ -494,12 +499,14 @@
 
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="slow" name="shippingMethod" type="radio" class="custom-control-input" value="slow"
+                                <input id="slow" name="shippingMethod" type="radio" class="custom-control-input"
+                                       value="slow"
                                        checked required>
                                 <label class="custom-control-label" for="slow">Thường</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="fast" name="shippingMethod" type="radio" class="custom-control-input" value="fast"
+                                <input id="fast" name="shippingMethod" type="radio" class="custom-control-input"
+                                       value="fast"
                                        checked required>
                                 <label class="custom-control-label" for="fast">Nhanh</label>
                             </div>
@@ -512,7 +519,9 @@
                             <%--                                <label class="custom-control-label" for="paypal">Paypal</label>--%>
                             <%--                            </div>--%>
                         </div>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #e07c51; border: none">Đặt hàng</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit"
+                                style="background-color: #e07c51; border: none">Đặt hàng
+                        </button>
                     </form>
                 </div>
                 <div class="col-md-6" id="your-cart">
@@ -522,18 +531,23 @@
                     </h4>
                     <ul class="list-group mb-3">
                         <% int totalPrice = 0;
-                           int index = 0;%>
+                            int index = 0;%>
                         <% for (ProductInCart prod : cart) {%>
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
 
-                                <h6 class="my-0"><img src="<%=prod.getImageURL()%>" style="max-width: 10%; height: auto">  <%=prod.getQuantity()%> x <%=prod.getTitle()%></h6>
-                                <small class="text-muted"><%=prod.getOption()%></small><br>
-                                <small class="delete-button" style="cursor: pointer" onclick="handleDeleteProduct(<%=index%>)">Xóa</small>
+                                <h6 class="my-0"><img src="<%=prod.getImageURL()%>"
+                                                      style="max-width: 10%; height: auto"> <%=prod.getQuantity()%>
+                                    x <%=prod.getTitle()%>
+                                </h6>
+                                <small class="text-muted"><%=prod.getOption()%>
+                                </small><br>
+                                <small class="delete-button" style="cursor: pointer"
+                                       onclick="handleDeleteProduct(<%=index%>)">Xóa</small>
                             </div>
                             <span class="text-muted"><%=CurrencyService.formatPrice(prod.getPrice() * prod.getQuantity())%></span>
                         </li>
-                        <%  totalPrice += prod.getPrice() * prod.getQuantity();
+                        <% totalPrice += prod.getPrice() * prod.getQuantity();
                             index++;
                         } %>
                         <%--                        <li class="list-group-item d-flex justify-content-between bg-light">--%>
@@ -549,14 +563,14 @@
                         </li>
                     </ul>
 
-<%--                    <form class="card p-2">--%>
-<%--                        <div class="input-group">--%>
-<%--                            <input type="text" class="form-control" placeholder="Promo code">--%>
-<%--                            <div class="input-group-append">--%>
-<%--                                <button type="submit" class="btn btn-secondary">Redeem</button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </form>--%>
+                    <%--                    <form class="card p-2">--%>
+                    <%--                        <div class="input-group">--%>
+                    <%--                            <input type="text" class="form-control" placeholder="Promo code">--%>
+                    <%--                            <div class="input-group-append">--%>
+                    <%--                                <button type="submit" class="btn btn-secondary">Redeem</button>--%>
+                    <%--                            </div>--%>
+                    <%--                        </div>--%>
+                    <%--                    </form>--%>
                 </div>
 
             </div>

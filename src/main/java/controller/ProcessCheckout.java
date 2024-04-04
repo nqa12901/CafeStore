@@ -4,6 +4,7 @@
 package controller;
 
 import dao.OrderDAO;
+import dao.UserDao;
 import model.ProductInCart;
 import model.User;
 
@@ -44,7 +45,7 @@ public class ProcessCheckout extends HttpServlet {
         String note = request.getParameter("note");
         String email = request.getParameter("email");
         String number = request.getParameter("number");
-        Boolean saveInfo = Boolean.valueOf(request.getParameter("save-info"));
+        String saveInfo = request.getParameter("save-info");
         String paymentMethod = "Ship COD";
         String status = "Processing";
         String shipping_method = request.getParameter("shippingMethod");
@@ -55,6 +56,12 @@ public class ProcessCheckout extends HttpServlet {
         for (ProductInCart prod : cart)
         {
             OrderDAO.addOrderDetail(orderId, prod.getId(), prod.getPrice(), prod.getQuantity(), prod.getPrice() * prod.getQuantity(), prod.getOption());
+        }
+        if (saveInfo != null)
+        {
+            UserDao.updateAddressAndNumber(userId, address, number);
+            user = UserDao.handleLogin(user.getUsername(), user.getPassword());
+            session.setAttribute("user", user);
         }
         RequestDispatcher rq = request.getRequestDispatcher("./orderSuccess.jsp");
         rq.forward(request, response);
