@@ -24,7 +24,7 @@ public class UserDao {
             PreparedStatement ps = c.prepareStatement(select);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("gender"), rs.getString("birthday"));
+                return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("gender"), rs.getString("birthday"), rs.getString("number"), rs.getString("address"));
             }
             return null;
         } catch (Exception ex) {
@@ -62,5 +62,16 @@ public class UserDao {
             ex.printStackTrace();
         }
         return false;
+    }
+
+    public static void updateAddressAndNumber(int id, String address, String number) throws SQLException {
+        try (Connection c = openConnection()){
+            String select = String.format("UPDATE users SET address = '%s', number = '%s' WHERE id = %d", address, number, id);
+            PreparedStatement ps = c.prepareStatement(select);
+            ps.executeUpdate();
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 }

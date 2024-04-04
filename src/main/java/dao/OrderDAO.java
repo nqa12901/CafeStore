@@ -1,6 +1,9 @@
 package dao;
 
+import model.Order;
+
 import java.sql.*;
+import java.util.ArrayList;
 
 public class OrderDAO {
     public static Connection openConnection() {
@@ -44,5 +47,22 @@ public class OrderDAO {
             e.printStackTrace();
         }
         return orderId;
+    }
+
+    public static ArrayList<Order> ordersList(int userId) throws SQLException {
+        ArrayList<Order> ordersList = new ArrayList<>();
+        try (Connection c = openConnection()) {
+            String get = String.format("select * from orders where user_id = %d", userId);
+            PreparedStatement ps = c.prepareStatement(get);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next())
+            {
+                ordersList.add(new Order(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11), rs.getString(12), rs.getString(13)));
+            }
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return ordersList;
     }
 }

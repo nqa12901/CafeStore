@@ -165,7 +165,7 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160  Thông tin tài khoản</a>
-                        <a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping"></i>&#160  Đơn mua</a>
+                        <a class="dropdown-item" href="./user-order"><i class="fa-solid fa-cart-shopping"></i>&#160  Đơn mua</a>
                         <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160  Đăng xuất</a>
                     </div>
                 </div>
