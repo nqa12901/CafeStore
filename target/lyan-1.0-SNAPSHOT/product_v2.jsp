@@ -203,20 +203,21 @@
             <a href="login" class="text-highlight">Login</a>
             <% } else { %>
             <div class="d-flex align-items-center">
-                <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <div class="cart-count" id="cartCount">0</div>
-                </a>
                 <div class="dropdown text-highlight">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= user.getLast_name() + " " + user.getFirst_name()%>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Thông tin tài khoản</a>
-                        <a class="dropdown-item" href="./logout">Đăng xuất</a>
+                        <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160 Thông tin tài khoản</a>
+                        <a class="dropdown-item" href="./user-order"><i class="fa-solid fa-cart-shopping"></i>&#160 Đơn mua</a>
+                        <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160 Đăng xuất</a>
                     </div>
                 </div>
+                <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="cart-count" id="cartCount">0</div>
+                </a>
             </div>
             <% } %>
         </div>
@@ -568,7 +569,7 @@
                 <label for="quantity">Số lượng</label>
                 <div>
                     <button type="button" onclick="decrement()">-</button>
-                    <input type="text" id="quantity" name="quantity" value="1" style=""  >
+                    <input type="text" id="quantity" name="quantity" value="1" style="">
                     <button type="button" onclick="increment()">+</button>
                 </div>
                 <br><br>
@@ -622,13 +623,13 @@
             smallButton.addEventListener("click", function () {
                 updatePrice(0);
                 optionForm.value = 'Small';
-                if(!smallbuttonClicked){
+                if (!smallbuttonClicked) {
                     smallbuttonClicked = true;
                     smallButton.classList.add("clicked");
-                    if(mediumbuttonClicked) {
+                    if (mediumbuttonClicked) {
                         mediumButton.classList.remove("clicked");
                         mediumbuttonClicked = false;
-                    }else{
+                    } else {
                         bigButton.classList.remove("clicked");
                         bigbuttonClicked = false;
                     }
@@ -641,10 +642,10 @@
                 if (!mediumbuttonClicked) {
                     mediumbuttonClicked = true; // Đánh dấu button đã được click
                     mediumButton.classList.add("clicked");
-                    if(smallbuttonClicked) {
+                    if (smallbuttonClicked) {
                         smallButton.classList.remove("clicked");
                         smallbuttonClicked = false;
-                    }else{
+                    } else {
                         bigButton.classList.remove("clicked");
                         bigbuttonClicked = false;
                     }
@@ -654,13 +655,13 @@
             bigButton.addEventListener("click", function () {
                 updatePrice(16000);
                 optionForm.value = 'Big';
-                if(!bigbuttonClicked){
+                if (!bigbuttonClicked) {
                     bigbuttonClicked = true;
                     bigButton.classList.add("clicked");
-                    if(mediumbuttonClicked) {
+                    if (mediumbuttonClicked) {
                         mediumButton.classList.remove("clicked");
                         mediumbuttonClicked = false;
-                    }else{
+                    } else {
                         smallButton.classList.remove("clicked");
                         smallbuttonClicked = false;
                     }

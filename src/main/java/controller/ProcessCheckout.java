@@ -50,9 +50,7 @@ public class ProcessCheckout extends HttpServlet {
         String status = "Processing";
         String shipping_method = request.getParameter("shippingMethod");
         String order_date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        System.out.println(userId + " / " + first_name + " / " + last_name +" / " + email + " / " + number + " / " + address + " / " + order_date + " / " + status + " / " + note + " / " + totalMoney + " / " + shipping_method + " / " + paymentMethod + " / " + saveInfo);
         int orderId = OrderDAO.addOrder(userId, totalMoney, first_name, last_name, email, number, address, order_date, status, note, shipping_method, paymentMethod);
-        System.out.println(orderId);
         for (ProductInCart prod : cart)
         {
             OrderDAO.addOrderDetail(orderId, prod.getId(), prod.getPrice(), prod.getQuantity(), prod.getPrice() * prod.getQuantity(), prod.getOption());
@@ -63,6 +61,7 @@ public class ProcessCheckout extends HttpServlet {
             user = UserDao.handleLogin(user.getUsername(), user.getPassword());
             session.setAttribute("user", user);
         }
+        session.setAttribute("cart", null);
         RequestDispatcher rq = request.getRequestDispatcher("./orderSuccess.jsp");
         rq.forward(request, response);
     }
