@@ -12,29 +12,20 @@
   <component name="ChangeListManager">
     <list default="true" id="e31f0a03-7282-4b1d-afd5-3e375b97452a" name="Changes" comment="First commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessUserOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessUserOrders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/FileUploadServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProcessCheckout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProcessCheckout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProcessUserOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProcessUserOrders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/OrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/FileUploadServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessCheckout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessCheckout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessUserOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessUserOrders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/OrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/upload_test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_by_category_v3.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_by_category_v3.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +45,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="servlet" />
-        <option value="Jsp File" />
-        <option value="Class" />
         <option value="Add new Servlet" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -408,7 +399,19 @@
       <workItem from="1712238657917" duration="3885000" />
       <workItem from="1712242560303" duration="103000" />
       <workItem from="1712245649600" duration="185000" />
-      <workItem from="1712248889329" duration="659000" />
+      <workItem from="1712248889329" duration="833000" />
+      <workItem from="1712325490506" duration="1019000" />
+      <workItem from="1712341341765" duration="602000" />
+      <workItem from="1712352893230" duration="2966000" />
+      <workItem from="1712355889933" duration="43000" />
+      <workItem from="1712366029503" duration="6666000" />
+      <workItem from="1712417903071" duration="1544000" />
+      <workItem from="1712427224368" duration="622000" />
+      <workItem from="1712502818718" duration="313000" />
+      <workItem from="1712505130019" duration="600000" />
+      <workItem from="1712506597065" duration="1325000" />
+      <workItem from="1712587666998" duration="6928000" />
+      <workItem from="1712602101296" duration="4057000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
