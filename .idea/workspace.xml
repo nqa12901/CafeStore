@@ -12,19 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e31f0a03-7282-4b1d-afd5-3e375b97452a" name="Changes" comment="First commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessCheckout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProcessUserOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProcessUserOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProcessUserOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProcessUserOrders.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/OrderDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessUserOrders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/controller/ProcessUserOrders.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/OrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_by_category_v3.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_by_category_v3.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +400,12 @@
       <workItem from="1712505130019" duration="600000" />
       <workItem from="1712506597065" duration="1325000" />
       <workItem from="1712587666998" duration="6928000" />
-      <workItem from="1712602101296" duration="4057000" />
+      <workItem from="1712602101296" duration="4997000" />
+      <workItem from="1712610184092" duration="622000" />
+      <workItem from="1712633117480" duration="533000" />
+      <workItem from="1712633683882" duration="172000" />
+      <workItem from="1712635301001" duration="509000" />
+      <workItem from="1712639661776" duration="737000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
