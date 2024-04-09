@@ -534,6 +534,7 @@
     <style>
         .navbar {
             z-index: 1;
+            border-bottom: 0.5px solid #bdbdbd;
         }
         .navbar-nav .nav-link {
             margin-right: 10px;
@@ -638,11 +639,9 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-4">
-                                <h2>Lịch sử Đơn Hàng</h2>
+                                <h2>Lịch sử đơn hàng</h2>
                             </div>
                             <div class="col-sm-8">
-                                <%--                                add ajax here--%>
-                               
                             </div>
                         </div>
                     </div>
@@ -722,7 +721,6 @@
                                         <span class="close" onclick="closePopup(event, 'popup<%=i%>')">&times;</span>
                                         <iframe src="./user-order?id=<%=order.getId()%>&ordinal-number=<%=i%>" style="width:100%; height:500px; border: none; border-radius: 8px;"></iframe>
                                     </div>
-
                                 </div>
                                     <%i++;} %>
                         </tbody>
