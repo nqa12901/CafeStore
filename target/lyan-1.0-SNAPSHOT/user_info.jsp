@@ -29,6 +29,41 @@
     </head>
 
     <style>
+        .current-avatar {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 150px; /* Adjust the size as needed */
+            height: 150px; /* Adjust the size as needed */
+            margin-bottom: 20px;
+        }
+
+        .current-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-avatar {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+
+        .upload-avatar button {
+            margin-top: 10px;
+        }
+
+        .avatar-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+
+    <style>
         .delete-button:hover {
             color: #e07c51;
         }
@@ -304,6 +339,7 @@
         .selected {
             color: #e07c51;
         }
+
         .gender-wrapper {
             display: flex;
             align-items: center;
@@ -320,7 +356,7 @@
 
     </style>
 
-<%--    birthday field type--%>
+    <%--    birthday field type--%>
     <style>
         .birthday-fields {
             display: flex;
@@ -338,11 +374,12 @@
 
         }
 
-        .linhiu1{
+        .linhiu1 {
             margin-left: 20px;
             margin-bottom: 20px;
         }
-        form{
+
+        form {
             margin-left: 20px;
         }
     </style>
@@ -362,22 +399,22 @@
                 <div class="d-flex align-items-center">
                     <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
                         <i class="fa-solid fa-cart-shopping"></i>
-<%--                        <div class="cart-count" id="cartCount">0--%>
-                        </div>
-                    </a>
-                    <div class="dropdown text-highlight">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <%= user.getLast_name() + " " + user.getFirst_name()%>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Thông tin tài khoản</a>
-                            <a class="dropdown-item" href="./logout">Đăng xuất</a>
-                        </div>
+                        <%--                        <div class="cart-count" id="cartCount">0--%>
+                </div>
+                </a>
+                <div class="dropdown text-highlight">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= user.getLast_name() + " " + user.getFirst_name()%>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+                        <a class="dropdown-item" href="./logout">Đăng xuất</a>
                     </div>
                 </div>
-                <% } %>
             </div>
+            <% } %>
+        </div>
         </div>
 
 
@@ -489,7 +526,8 @@
                             <label for="Number">Điện thoại</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="number" name="number" placeholder="Number"
-                                       value="<%if (user != null) { if (user.getNumber() != null) { %> <%=user.getNumber()%> <% }} %>" required>
+                                       value="<%if (user != null) { if (user.getNumber() != null) { %> <%=user.getNumber()%> <% }} %>"
+                                       required>
 
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Thêm SĐT hợp lệ.
@@ -562,76 +600,82 @@
                             </div>
 
 
+                            <hr class="mb-4">
 
-                        <hr class="mb-4">
-
-                        <button class="btn btn-primary btn-lg btn-block" type="submit"
-                                style="background-color: #e07c51; border: none">Lưu
-                        </button>
-                    </form>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit"
+                                    style="background-color: #e07c51; border: none">Lưu
+                            </button>
+                        </form>
                 </div>
+
                 <div class="col-md-6" id="your-cart">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Giỏ hàng</span>
-                        <span class="badge badge-secondary badge-pill">7</span>
+                        <span>Avatar</span>
                     </h4>
-                    <ul class="list-group mb-3">
+                    <div class="avatar-selection">
+                        <!-- Round image showing the current avatar -->
+                        <div class="current-avatar">
+                            <img src="display-avatar?fileName=<%=user.getAvatar_url()%>"
+                                 id="avatar-image">
+                            <div class="overlay" id="upload-overlay">
+                                <span class="upload-text">Upload</span>
+                            </div>
+                        </div>
 
-                    </ul>
-
-                    <%--                    <form class="card p-2">--%>
-                    <%--                        <div class="input-group">--%>
-                    <%--                            <input type="text" class="form-control" placeholder="Promo code">--%>
-                    <%--                            <div class="input-group-append">--%>
-                    <%--                                <button type="submit" class="btn btn-secondary">Redeem</button>--%>
-                    <%--                            </div>--%>
-                    <%--                        </div>--%>
-                    <%--                    </form>--%>
+                        <!-- Rectangle for uploading a new avatar -->
+                        <div class="upload-avatar">
+                            <h5 class="mb-3">Upload New Avatar</h5>
+                            <form action="./upload" method="post" enctype="multipart/form-data" id="avatar-form">
+                                <input type="file" name="avatar" id="avatar-input" accept="image/*">
+                                <button type="submit" class="btn btn-primary mt-2"
+                                        style="background-color: #e07c51; border: none">Upload
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
 
+                <footer class="my-5 pt-5 text-muted text-center text-small">
+                    <p class="mb-1">&copy; 2017-2018 Company Name</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Privacy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms</a></li>
+                        <li class="list-inline-item"><a href="#">Support</a></li>
+                    </ul>
+                </footer>
             </div>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; 2017-2018 Company Name</p>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Privacy</a></li>
-                    <li class="list-inline-item"><a href="#">Terms</a></li>
-                    <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
-        </div>
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+            <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                    'use strict';
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
-        <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function () {
-                'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
 
-                window.addEventListener('load', function () {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function (form) {
-                        form.addEventListener('submit', function (event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-        </script>
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
     </body>
     <script>
         function handleDeleteProduct(id) {
