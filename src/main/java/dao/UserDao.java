@@ -24,7 +24,7 @@ public class UserDao {
             PreparedStatement ps = c.prepareStatement(select);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("gender"), rs.getString("birthday"), rs.getString("number"), rs.getString("address"));
+                return new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("gender"), rs.getString("birthday"), rs.getString("number"), rs.getString("address"), rs.getString("avatar_url"));
             }
             return null;
         } catch (Exception ex) {
@@ -37,7 +37,7 @@ public class UserDao {
         try (Connection c = openConnection())
         {
             System.out.printf("Insert record into the table...\n");
-            String select = String.format("INSERT INTO users VALUES (null, '%s', '%s', '%s', '%s', null, null, null, null, null)", username, password, first_name, last_name);
+            String select = String.format("INSERT INTO users VALUES (null, '%s', '%s', '%s', '%s', null, null, null, null, null, null)", username, password, first_name, last_name);
             Statement s = c.createStatement();
             int a = s.executeUpdate(select);
             return a != 0;
@@ -67,6 +67,17 @@ public class UserDao {
     public static void updateAddressAndNumber(int id, String address, String number) throws SQLException {
         try (Connection c = openConnection()){
             String select = String.format("UPDATE users SET address = '%s', number = '%s' WHERE id = %d", address, number, id);
+            PreparedStatement ps = c.prepareStatement(select);
+            ps.executeUpdate();
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void updateAvatar(int id, String avatar_name) throws SQLException {
+        try (Connection c = openConnection()){
+            String select = String.format("UPDATE users SET avatar_url = '%s' WHERE id = %d", avatar_name, id);
             PreparedStatement ps = c.prepareStatement(select);
             ps.executeUpdate();
         } catch (Exception ex)

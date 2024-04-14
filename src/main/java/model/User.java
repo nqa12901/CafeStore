@@ -2,9 +2,9 @@ package model;
 
 public class User {
     private int id;
-    private String username, password, first_name, last_name, gender, birthday, number, address;
+    private String username, password, first_name, last_name, gender, birthday, number, address, avatar_url;
 
-    public User(int id, String username, String password, String first_name, String last_name, String gender, String birthday, String number, String address) {
+    public User(int id, String username, String password, String first_name, String last_name, String gender, String birthday, String number, String address, String avatar_url) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -14,6 +14,7 @@ public class User {
         this.birthday = birthday;
         this.number = number;
         this.address = address;
+        this.avatar_url = avatar_url;
     }
 
     public User(int id, String username, String password, String first_name, String last_name, String gender, String birthday) {
@@ -24,6 +25,14 @@ public class User {
         this.last_name = last_name;
         this.gender = gender;
         this.birthday = birthday;
+    }
+
+    public String getAvatar_url() {
+        return avatar_url;
+    }
+
+    public void setAvatar_url(String avatar_url) {
+        this.avatar_url = avatar_url;
     }
 
     public String getPassword() {
