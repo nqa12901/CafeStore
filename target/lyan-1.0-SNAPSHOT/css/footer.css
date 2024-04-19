@@ -1,0 +1,47 @@
+.root{
+    --color-one: #3c3c3c;
+}
+.futter {
+    position: relative;
+    background: #262626;
+    z-index: 0;
+    color: white;
+    padding-bottom: 30px;
+}
+hr {
+    color: white;
+}
+.container {
+    padding-top: 30px;
+}
+.inner-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.inner-desc {
+}
+.footer-icon {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+a {
+    color: black;
+}
+a .footer-icon:hover {
+    color: #e07c51;
+}
+.callme {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    margin-left: 0;
+}
+.callme i {
+    font-size: 40px;
+    color: rgb(235, 152, 0);
+}
+.callme i:hover {
+    color: white;
+}

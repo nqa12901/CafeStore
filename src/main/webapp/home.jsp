@@ -30,7 +30,7 @@
     }%>
 
     <!-- Top-bar -->
-    <%  ArrayList<ProductInCart> cart = new ArrayList<>();
+    <% ArrayList<ProductInCart> cart = new ArrayList<>();
         if (session.getAttribute("cart") != null) {
             cart = (ArrayList<ProductInCart>) session.getAttribute("cart");
         }
@@ -149,7 +149,6 @@
     </style>
 
 
-
     <div class="top-bar">
         <span class="phone-icon">&#128222;</span>
         <span class="phone-number">Order: 0936 849 516</span>
@@ -165,20 +164,22 @@
                 <div class="dropdown text-highlight">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <%= user.getLast_name() + " " + user.getFirst_name()%>
-                        <img src="display-avatar?fileName=<%=user.getAvatar_url()%>" alt="" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: #e07c51 1px solid">
+                        <%= user.getLast_name() + " " + user.getFirst_name()%> &nbsp;&nbsp;
+                        <img src="display-avatar?fileName=<%=user.getAvatar_url()%>" alt=""
+                             style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: #e07c51 1px solid">
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160  Thông tin tài khoản</a>
-                        <a class="dropdown-item" href="./user-order"><i class="fa-solid fa-cart-shopping"></i>&#160  Đơn mua</a>
-                        <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160  Đăng xuất</a>
+                        <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160 Thông tin tài khoản</a>
+                        <a class="dropdown-item" href="./user-order"><i class="fa-solid fa-cart-shopping"></i>&#160 Đơn
+                            mua</a>
+                        <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160
+                            Đăng xuất</a>
                     </div>
                 </div>
             </div>
             <% } %>
         </div>
     </div>
-
 
 
     <script src="script.js"></script>
@@ -213,6 +214,7 @@
         .navbar {
             z-index: 1;
         }
+
         .navbar-nav .nav-link {
             margin-right: 10px;
             margin-left: 10px;
@@ -268,7 +270,8 @@
                 <a href="home"><img src="resources/Banner/Logo.png" width="200" height="40" alt=""></a>
                 <ul class="navbar-nav">
                     <li class="navbar-item">
-                        <a class="nav-link " href="./product?type=1" style="font-size: 14px; line-height: 22px">Cà phê</a>
+                        <a class="nav-link " href="./product?type=1" style="font-size: 14px; line-height: 22px">Cà
+                            phê</a>
                     </li>
                     <li class="navbar-item">
                         <a class="nav-link " href="./product?type=2" style="font-size: 14px; line-height: 22px">Trà</a>
@@ -335,6 +338,41 @@
     <br>
     <br>
 
+    <style>
+        /* Màu chữ mặc định */
+        .card-title a {
+            color: black;
+            text-decoration: none; /* Loại bỏ gạch chân mặc định */
+            display: block;
+            word-wrap: break-word;
+            max-width: 250px;
+        }
+
+        /* Màu chữ khi hover */
+        .card-title a:hover {
+            transition: 0.3s ease;
+            color: #e07c51;
+            display: block;
+            word-wrap: break-word;
+            max-width: 250px;
+        }
+
+        /* Phần viền chỉ bao quanh ảnh */
+        .card {
+            border: none;
+            border-radius: 12px; /* Độ cong của góc */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            border-radius: 12px;
+        }
+
+        /* Loại bỏ phần viền của .card-body */
+        .card-body {
+            border: none;
+        }
+    </style>
 
     <!-- Web body -->
     <body>
@@ -344,42 +382,6 @@
 
             <%ArrayList<Product> productList = (ArrayList<Product>) request.getAttribute("productList");%>
             <% for (Product prod : productList) { %>
-
-            <style>
-                /* Màu chữ mặc định */
-                .card-title a {
-                    color: black;
-                    text-decoration: none; /* Loại bỏ gạch chân mặc định */
-                    display: block;
-                    word-wrap: break-word;
-                    max-width: 250px;
-                }
-
-                /* Màu chữ khi hover */
-                .card-title a:hover {
-                    transition: 0.3s ease;
-                    color: #e07c51;
-                    display: block;
-                    word-wrap: break-word;
-                    max-width: 250px;
-                }
-
-                /* Phần viền chỉ bao quanh ảnh */
-                .card {
-                    border: none;
-                    border-radius: 12px; /* Độ cong của góc */
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
-
-                .card-img-top {
-                    border-radius: 12px;
-                }
-
-                /* Loại bỏ phần viền của .card-body */
-                .card-body {
-                    border: none;
-                }
-            </style>
 
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="container product-list">
@@ -401,7 +403,7 @@
             <% } %>
         </div>
 
-
+        <%@ include file="footer.jsp" %>
         <%-- Bootstrap Script --%>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
