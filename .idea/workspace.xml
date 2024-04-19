@@ -11,23 +11,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e31f0a03-7282-4b1d-afd5-3e375b97452a" name="Changes" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/compare.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/hello.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/infor.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product_by_category_v3.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product_by_category_v3.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product_v2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product_v2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/avatar/df20ad6e-fb0a-4fb5-908c-759c91226899-anh_ngot.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/compare.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/hello.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/infor.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_by_category_v3.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_by_category_v3.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/product_v2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/resources/avatar/df20ad6e-fb0a-4fb5-908c-759c91226899-anh_ngot.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_info.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/lyan-1.0-SNAPSHOT/user_order.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +55,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="servlet" />
-        <option value="Jsp File" />
         <option value="Add new Servlet" />
         <option value="Class" />
+        <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -105,6 +115,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -116,6 +127,7 @@
     &quot;git-widget-placeholder&quot;: &quot;new&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/LynG/Downloads/csdl/Web-project-BTL-CSDL--main/src/main/webapp/resources/avatar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -145,6 +157,7 @@
       <recent name="C:\Users\LynG\IdeaProjects\lyan\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LynG\Downloads\csdl\Web-project-BTL-CSDL--main\target\lyan-1.0-SNAPSHOT\resources\avatar" />
       <recent name="C:\Users\LynG\Downloads\csdl\Web-project-BTL-CSDL--main\src\main\java\controller" />
       <recent name="C:\Users\LynG\IdeaProjects\lyan\src\main\webapp\resources\Banner" />
       <recent name="C:\Users\LynG\IdeaProjects\lyan\src\main\webapp" />
@@ -430,7 +443,16 @@
       <workItem from="1713031703297" duration="4045000" />
       <workItem from="1713036972364" duration="96000" />
       <workItem from="1713071466747" duration="1172000" />
-      <workItem from="1713113581765" duration="1064000" />
+      <workItem from="1713113581765" duration="1622000" />
+      <workItem from="1713193468953" duration="35000" />
+      <workItem from="1713248169447" duration="2000" />
+      <workItem from="1713354528282" duration="130000" />
+      <workItem from="1713362534016" duration="27000" />
+      <workItem from="1713362622089" duration="43000" />
+      <workItem from="1713364230133" duration="71000" />
+      <workItem from="1713434792460" duration="1170000" />
+      <workItem from="1713448336857" duration="1613000" />
+      <workItem from="1713522334594" duration="2282000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />

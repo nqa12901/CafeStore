@@ -481,21 +481,25 @@
             <a href="login" class="text-highlight">Login</a>
             <% } else { %>
             <div class="d-flex align-items-center">
-                <div class="dropdown text-highlight">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <%= user.getLast_name() + " " + user.getFirst_name()%>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160  Thông tin tài khoản</a>
-                        <a class="dropdown-item" href="./user-order"><i class="fa-solid fa-cart-shopping"></i>&#160  Đơn mua</a>
-                        <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160  Đăng xuất</a>
-                    </div>
-                </div>
                 <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <div class="cart-count" id="cartCount">0</div>
                 </a>
+                <div class="dropdown text-highlight">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= user.getLast_name() + " " + user.getFirst_name()%> &nbsp;&nbsp;
+                        <img src="display-avatar?fileName=<%=user.getAvatar_url()%>" alt=""
+                             style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: #e07c51 1px solid">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="./info"><i class="fa-solid fa-user"></i>&#160 Thông tin tài khoản</a>
+                        <a class="dropdown-item" href="./user-order"><i class="fa-solid fa-cart-shopping"></i>&#160 Đơn
+                            mua</a>
+                        <a class="dropdown-item" href="./logout"><i class="fa-solid fa-right-from-bracket"></i>&#160
+                            Đăng xuất</a>
+                    </div>
+                </div>
             </div>
             <% } %>
         </div>
@@ -735,6 +739,7 @@
                 </div>
             </div>
         </div>
+        <%@ include file="footer.jsp" %>
     </body>
     <script>
         // Function to open the popup
