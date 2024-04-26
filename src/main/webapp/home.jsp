@@ -159,7 +159,6 @@
             <div class="d-flex align-items-center">
                 <a href="./cart" class="text-highlight" style="font-size: 24px; position: relative;">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <div class="cart-count" id="cartCount">0</div>
                 </a>
                 <div class="dropdown text-highlight">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"

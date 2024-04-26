@@ -18,7 +18,7 @@
               crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="css/button.css">
         <% Product prod = (Product) request.getAttribute("product"); %>
         <% if (prod == null) { %>
         <title>Linh Coffee - For The Good Teacher</title>
@@ -431,7 +431,7 @@
 
         .quantity-button {
             border: 2px solid #E1E8EE;
-            border-radius: 6px;
+            border-radius: 12px;
             padding: 13px 20px;
             font-size: 14px;
             color: #5E6977;
@@ -570,11 +570,11 @@
                     </div>
                 </div>
 
-                <label for="quantity">Số lượng</label>
-                <div>
-                    <button type="button" onclick="decrement()">-</button>
-                    <input type="text" id="quantity" name="quantity" value="1" style=""  >
-                    <button type="button" onclick="increment()">+</button>
+                <label>Số lượng</label>
+                <div class="wrapper">
+                    <span class="minus">-</span>
+                    <span class="num" id="quantity">01</span>
+                    <span class="plus">+</span>
                 </div>
                 <br><br>
                 <form method="POST" action="./product" id="add-to-cart">
@@ -594,19 +594,24 @@
 
 
         <script>
-            function increment() {
-                var quantityField = document.getElementById('quantity');
-                var currentValue = parseInt(quantityField.value);
-                quantityField.value = currentValue + 1;
-            }
+            const plus = document.querySelector(".plus"),
+                minus = document.querySelector(".minus"),
+                num = document.querySelector(".num");
+            let a=1;
+            plus.addEventListener("click",()=>{
+                a++;
+                a=( a< 10)? "0" + a : a;
+                num.innerText=a;
+                console.log(a);
+            });
+            minus.addEventListener("click",()=>{
+                if(a > 1){
+                    a--;
+                    a=( a< 10)? "0" + a : a;
+                    num.innerText=a;
 
-            function decrement() {
-                var quantityField = document.getElementById('quantity');
-                var currentValue = parseInt(quantityField.value);
-                if (currentValue > 1) {
-                    quantityField.value = currentValue - 1;
                 }
-            }
+            });
 
             var optionForm = document.getElementById("option-form");
             // Lấy phần hiển thị giá tiền
@@ -682,7 +687,7 @@
             // Process form submit
 
             function getQuantity() {
-                return document.getElementById('quantity').value;
+                return document.getElementById('quantity').innerHTML;
             }
 
             function formatPrice(price) {
