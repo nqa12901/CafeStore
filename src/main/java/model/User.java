@@ -2,7 +2,7 @@ package model;
 
 public class User {
     private int id;
-    private String username, password, first_name, last_name, gender, birthday, number, address, avatar_url;
+    private String username, password, first_name, last_name, gender, birthday, number, address, avatar_url, status;
 
     public User(int id, String username, String password, String first_name, String last_name, String gender, String birthday, String number, String address, String avatar_url) {
         this.id = id;
@@ -25,6 +25,22 @@ public class User {
         this.last_name = last_name;
         this.gender = gender;
         this.birthday = birthday;
+    }
+
+    public User(int id, String username, String first_name, String last_name, String gender, String birthday, String number, String address, String status) {
+        this.id = id;
+        this.username = username;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.number = number;
+        this.address = address;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public String getAvatar_url() {
