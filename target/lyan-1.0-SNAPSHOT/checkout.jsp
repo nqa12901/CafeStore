@@ -489,14 +489,6 @@
                                        checked required>
                                 <label class="custom-control-label" for="credit">Ship COD</label>
                             </div>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="debit">Debit card</label>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="paypal">Paypal</label>--%>
-                            <%--                            </div>--%>
                         </div>
                         <hr class="mb-4">
                         <h4 class="mb-3">Hình thức giao hàng</h4>
@@ -514,14 +506,6 @@
                                        checked required>
                                 <label class="custom-control-label" for="fast">Nhanh</label>
                             </div>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="debit">Debit card</label>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="custom-control custom-radio">--%>
-                            <%--                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>--%>
-                            <%--                                <label class="custom-control-label" for="paypal">Paypal</label>--%>
-                            <%--                            </div>--%>
                         </div>
                         <button class="btn btn-primary btn-lg btn-block" type="submit"
                                 style="background-color: #e07c51; border: none">Đặt hàng
@@ -554,39 +538,18 @@
                         <% totalPrice += prod.getPrice() * prod.getQuantity();
                             index++;
                         } %>
-                        <%--                        <li class="list-group-item d-flex justify-content-between bg-light">--%>
-                        <%--                            <div class="text-success">--%>
-                        <%--                                <h6 class="my-0">Promo code</h6>--%>
-                        <%--                                <small>EXAMPLECODE</small>--%>
-                        <%--                            </div>--%>
-                        <%--                            <span class="text-success">-$5</span>--%>
-                        <%--                        </li>--%>
+
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Tổng (VNĐ)</span>
                             <strong><%=CurrencyService.formatPrice(totalPrice)%> VNĐ</strong>
                         </li>
                     </ul>
 
-                    <%--                    <form class="card p-2">--%>
-                    <%--                        <div class="input-group">--%>
-                    <%--                            <input type="text" class="form-control" placeholder="Promo code">--%>
-                    <%--                            <div class="input-group-append">--%>
-                    <%--                                <button type="submit" class="btn btn-secondary">Redeem</button>--%>
-                    <%--                            </div>--%>
-                    <%--                        </div>--%>
-                    <%--                    </form>--%>
                 </div>
 
             </div>
 
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; 2017-2018 Company Name</p>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Privacy</a></li>
-                    <li class="list-inline-item"><a href="#">Terms</a></li>
-                    <li class="list-inline-item"><a href="#">Support</a></li>
-                </ul>
-            </footer>
+
         </div>
 
         <!-- Bootstrap core JavaScript
