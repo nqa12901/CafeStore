@@ -1,7 +1,7 @@
 package dao;
 
 import model.User;
-
+import java.util.ArrayList;
 import java.sql.*;
 
 public class UserDao {
@@ -84,5 +84,49 @@ public class UserDao {
         {
             ex.printStackTrace();
         }
+    }
+
+    public static ArrayList<User> getAllUser() {
+        try (Connection c = openConnection()) {
+            String query = String.format("select * from users");
+            PreparedStatement ps = c.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            ArrayList<User> res = new ArrayList<User>();
+            while(rs.next()) {
+                User user = new User(rs.getInt("id"),rs.getString("username"),rs.getString("first_name"),rs.getString("last_name"),rs.getString("gender"),rs.getString("birthday"),rs.getString("number"),rs.getString("address"),rs.getString("status"));
+                res.add(user);
+            }
+            return res;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public static boolean deleteUser(int userId) {
+        try (Connection c = openConnection()) {
+            String delete = String.format("delete from users where id = %d",userId);
+            PreparedStatement ps = c.prepareStatement(delete);
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean statusUser(int userId, String status) {
+        try (Connection c = openConnection();
+             PreparedStatement stmt = c.prepareStatement("UPDATE users SET status = ? WHERE id = ?")) {
+            stmt.setString(1, status);
+            stmt.setInt(2, userId);
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

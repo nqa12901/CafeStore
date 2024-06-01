@@ -87,4 +87,38 @@ public class OrderDAO {
         }
         return orderDetailList;
     }
+
+    public static ArrayList<Order> getAllOrder(){
+        try(Connection c = openConnection()){
+            String query = "Select * from orders";
+            PreparedStatement ps = c.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            ArrayList<Order> res = new ArrayList<Order>();
+            while(rs.next()){
+                Order order = new Order(rs.getInt("id"),rs.getInt("user_id"),rs.getString("first_name"),
+                        rs.getString("last_name"),rs.getString("email"),rs.getString("phone_number"),rs.getString("address"),
+                        rs.getString("order_date"),rs.getString("status"),rs.getString("note"),rs.getInt("total_money"),
+                        rs.getString("shipping_method"),rs.getString("payment_method"));
+                res.add(order);
+            }
+            return res;
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public static int getTotalOrder(){
+        try (Connection c = openConnection()){
+            String query = "Select COUNT(*) from orders";
+            PreparedStatement ps = c.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                return rs.getInt(1);
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

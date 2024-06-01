@@ -705,13 +705,6 @@
                                 <td><%=order.getShippingMethod()%>
                                 </td>
 
-<%--                                <form action="./user-order" method="post">--%>
-<%--                                        <input type="hidden" name="id" value="<%=order.getId()%>">--%>
-<%--                                        <input type="hidden" name="ordinal-number" value="<%=i%>">--%>
-<%--&lt;%&ndash;                                    <a class="view" title="View Details" data-toggle="tooltip"><i&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                        class="material-icons">&#xE5C8;</i>&ndash;%&gt;--%>
-<%--                                        <input type="submit" name="upvote" value="View detail" />--%>
-<%--                                </form>--%>
                                 <%--the overlay--%>
                                 <div class="overlay" id="overlay" style="display: none;"></div>
 
